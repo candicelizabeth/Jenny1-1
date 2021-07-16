@@ -1,0 +1,9 @@
+
+    <%= d.label :name %>
+    <%= d.text_field :name %>
+    <%= d.collection_select :owner_id, Owner.all, :id, :name %>
+    <%= d.fields_for :owner do |o| %>
+        <%= o.label :name %>
+        <%= o.text_field :name %>
+    <% end %>
+    <%= d.submit %>
